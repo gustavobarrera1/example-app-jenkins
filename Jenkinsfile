@@ -23,4 +23,10 @@ pipeline {
             }
         }
     }
+    posts {
+        always {
+            sh 'echo "Eliminando contenedores"'
+            sh "docker-compose down"
+        }
+    }
 }
