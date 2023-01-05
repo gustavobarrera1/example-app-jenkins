@@ -12,7 +12,7 @@ pipeline {
         stage("Iniciar contenedor"){
             steps {
                 retry(3){
-                    sh "docker-compuse down && docker-compose up -d"
+                    sh "docker-compose down && docker-compose up -d"
                     sh 'echo "Falta agregar Sonarqube"'
                 }
             }
