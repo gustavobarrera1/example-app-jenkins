@@ -1,17 +1,5 @@
 version: "3.9"
 services:
-  mysql:
-    image: mysql:5.7.23
-    hostname: mysql
-    volumes:
-      - '/mysql_backup/:/var/lib/mysql:rw'
-    env_file:
-      - './mysql.env'
-    environment:
-      - MYSQL_CLIENT_DATABASE_HOST=mysql
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=gustavo
-    restart: always
   web:
     build: .
     ports:
