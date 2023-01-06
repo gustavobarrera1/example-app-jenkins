@@ -28,10 +28,10 @@ pipeline {
                 sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://sonarqube:9000"
             }
         }
-    post {
-        always {
-            sh 'echo "Eliminando contenedores"'
-            sh "docker-compose down"
+        post {
+            always {
+                sh 'echo "Eliminando contenedores"'
+                sh "docker-compose down"
         }
     }
 }
