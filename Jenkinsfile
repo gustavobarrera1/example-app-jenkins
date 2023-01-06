@@ -26,6 +26,7 @@ pipeline {
             def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
             withCredentials([string(credentialsId: 'sonar', variable: 'sonarLogin')]) {
                 sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://sonarqube:9000"
+            }
         }
     post {
         always {
