@@ -32,6 +32,7 @@ pipeline {
             always {
                 sh 'echo "Eliminando contenedores"'
                 sh "docker-compose down"
+            }
         }
     }
 }
