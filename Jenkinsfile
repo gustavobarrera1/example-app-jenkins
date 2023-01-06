@@ -30,7 +30,7 @@ pipeline {
         }
         post {
             always {
-                sh 'echo "Eliminando contenedores"'
+                sh 'echo "Eliminando contenedores!"'
                 sh "docker-compose down"
             }
         }
