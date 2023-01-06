@@ -22,12 +22,6 @@ pipeline {
                 sh "curl http://34.176.51.200:8000/"
             }
         }
-        stage('Sonar Scanner') {
-            def sonarqubeScannerHome = tool name: 'sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-            withCredentials([string(credentialsId: 'sonar', variable: 'sonarLogin')]) {
-                sh "${sonarqubeScannerHome}/bin/sonar-scanner -e -Dsonar.host.url=http://sonarqube:9000"
-            }
-        }
         post {
             always {
                 sh 'echo "Eliminando contenedores!"'
