@@ -22,11 +22,5 @@ pipeline {
                 sh "curl http://34.176.51.200:8000/"
             }
         }
-        post {
-            always {
-                sh 'echo "Eliminando contenedores!"'
-                sh "docker-compose down"
-            }
-        }
     }
 }
